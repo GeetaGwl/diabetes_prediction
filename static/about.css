@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;400&family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #000000;
+    --padding-inline-section: 20px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-text-color);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+ul {
+    list-style: none;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.15rem;
+    color: var(--secondary-text-color);
+    line-height: 1.8rem;
+}
+.hover-link {
+    color: var(--primary-text-color);
+    transition: 0.2s ease-out;
+    text-decoration: none;
+}
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: var(--padding-inline-section);
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+/* Button */
+.btn-light:hover{
+    background-color: #595579 !important;
+}
+
+/* header section */
+
+header {
+    padding: 50px var(--padding-inline-section) 0;
+}
+
+.header-section {
+    justify-content: center;
+    gap: 50px;
+}
+
+.header-left {
+    max-width: 40vw;
+}
+
+.header-left h1 {
+    margin-top: 10px;
+}
+
+.get-started-btn {
+    margin-top: 20px;
+}
+
+.header-right img {
+    width: 600px;
+    height: 330px;
+}
+
+
+/* big feature section */
+
+.big-feature-section {
+    padding: 50px var(--padding-inline-section) 0;
+}
+
+.big-feature-container {
+    gap: 50px;
+}
+
+#second-big-feature {
+    flex-direction: row-reverse;
+}
+
+.feature-img img {
+    width: 600px;
+    height: 330px;
+}
+.feature-desc {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* subfooter */
+
+.subfooter {
+    background-color: #595579;
+    padding: var(--padding-inline-section);
+}
+
+.subfooter-container {
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}

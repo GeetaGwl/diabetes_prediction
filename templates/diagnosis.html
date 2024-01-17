@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis</title>
+
+<style>
+  /* Style for the bottom navbar */
+
+
+
+*{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    }
+    html,
+    body,
+    header,
+    #intro {
+    height: 100%;
+    }
+    img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    }
+   
+</style>
+
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/static/bg/Diabetic.png" alt="" width="200" height="40"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <a class="nav-link active" aria-current="page" href="/">HOME</a>
+                <a class="nav-link" href="/About">ABOUT</a>
+                <a class="nav-link" href="/Diagnosis">DIAGNOSIS</a>
+                <a class="nav-link" href="/Research">RESEARCH</a>
+                <a class="nav-link" href="/ContactUs">CONTACT US</a>
+                <a class="nav-link" href="/ContactUs">FEEDBACK</a>
+                {% if session.logged_in %}
+                <span class="navbar-text">
+                  Welcome, {{ session.username }}!
+                </span>
+                <a class="nav-link" href="/logout">LOGOUT</a>
+              {% else %}
+              <a class="nav-link" href="/Login">LOGIN</a>
+              
+              {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div id="intro" class="container-fluid view ">
+        <h1 class="text-center mt-5"> CHECK YOUR DIABETES STATUS</h1>
+        <hr class="w-50 mx-auto mb-5">
+
+          <div class="row mb-5">
+          <div class="col-lg-6 col-md-6 col-12 my-auto">
+            <img src="/static/bg/diagnosis.jpg" class="float-left">
+
+          </div>
+          <div class="col-lg-6 col-md-6 col-12">
+            <form method="post" action="{{url_for('predict')}}">
+              <div class="form-group">
+                <!-- TODO : Year to accept only year date picker -->
+                <label for="Pregnancies">No. of Pregnencies</label>
+                <input class="form-control" type="number" id="Pregnancies" name="Pregnancies" required="required" placeholder="No. of Pregnencies">
+              </div>
+              <div class="form-group mt-3">
+                <label for="Glucose">Glucose Level</label>
+                <input class="form-control" type="text" step="any" id="Glucose" name="Glucose" required="required" placeholder="ex 148">
+              </div>
+              <div class="form-group mt-3">
+                <label for="BloodPressure">Current Blood Pressure</label>
+                <input class="form-control" type="text" id="BloodPressure" name="BloodPressure" required="required" placeholder="ex. 80">
+              </div>
+              <div class="form-group mt-3">
+                <label for="BMI">Enter the Body Mass Index</label>
+                <input class="form-control" type="text" id="BMI" name="BMI" required="required" placeholder="ex. 33.8">
+              </div>
+              <div class="form-group mt-3">
+                <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function</label>
+                <input class="form-control" type="text" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" required="required" placeholder="0.5">
+              </div>
+              <div class="form-group mt-3">
+                <label for="Age">Age</label>
+                <input class="form-control" type="number" id="Age" name="Age" required="required" placeholder="Age">
+              </div>
+              
+                <button type="submit" class="btn btn-danger mt-3">Predict</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div>
+          <h3>Variables:</h3>
+          <ul>
+            <li>Pregnancies: Number of times pregnant</li>
+            <li>Glucose: Plasma glucose concentration a 2 hours in an oral glucose tolerance test</li>
+            <li>BloodPressure: Diastolic blood pressure (mm Hg)</li>
+           
+            <li>BMI: Body mass index (weight in kg/(height in m)^2)</li>
+            <li>DiabetesPedigreeFunction: Diabetes pedigree function</li>
+            <li>Age: Age (years)</li>
+          </ul>
+        </div>
+        
+      </div>
+
+      <footer class="bg-dark text-center text-lg-start">
+  
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: white;">
+          © 2023 OnlineDiabetes.com. All rights reserved.
+        </div>
+      </footer>
+       
+</body>
+</html>

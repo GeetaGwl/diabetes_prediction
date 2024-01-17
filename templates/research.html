@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='research.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="/"><img src="/static/bg/Diabetic.png" alt="" width="200" height="40"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <a class="nav-link active" aria-current="page" href="/">HOME</a>
+                  <a class="nav-link" href="/About">ABOUT</a>
+                  <a class="nav-link" href="/Diagnosis">DIAGNOSIS</a>
+                  <a class="nav-link" href="/Research">RESEARCH</a>
+                  <a class="nav-link" href="/ContactUs">CONTACT US</a>
+                  <a class="nav-link" href="/ContactUs">FEEDBACK</a>
+                  {% if session.logged_in %}
+                  <span class="navbar-text">
+                    Welcome, {{ session.username }}!
+                  </span>
+                  <a class="nav-link" href="/logout">LOGOUT</a>
+                {% else %}
+                <a class="nav-link" href="/Login">LOGIN</a>
+                
+                {% endif %}
+              </div>
+          </div>
+      </div>
+  </nav>
+ 
+    <!--Nav Bar Ends-->
+
+    <!--Banner-->
+
+    <img src="/static/bg/fact_banner.png" class="img-fluid" alt="">
+
+    <!--Banner-->
+
+    <!-- latest news starts -->
+
+    <div class="content_area">
+        <div class="main_content floatleft">
+          <div class="left_coloum floatleft">
+            <div class="single_left_coloum_wrapper">
+              <h2 class="title">NEWS FROM AROUND THE WORLD</h2>
+                <a class="more" href="#">More</a>
+            <div class="single_left_coloum floatleft mt-2"> <img src="/static/bg/art_1.jpeg" alt="" width="290px" height="170px" />
+                <h5>Losing key type of pancreatic cell may contribute to diabetes</h5>
+                <p>Multiple types of beta cells produce insulin in the pancreas, helping to balance blood sugar levels.
+                   Losing a particularly productive type of beta cell may contribute to the development of diabetes, according to a new study...</p>
+                <a class="readmore" href="">Read more</a> 
+            </div>
+            <div class="single_left_coloum floatleft mt-2"> <img src="/static/bg/art_2.jpg" alt="" width="290px" height="170px" />
+                <h5>Artificial Pancreas Improves Blood Sugar Control for Kids Ages 2-6, Study Finds</h5>
+                <p>An artificial pancreas improves blood sugar control in children ages 2 to 6 with type 1 diabetes.Trial 
+                    participants using the artificial pancreas spent approximately three more hours per day.According to a new study ...</p>
+                <a class="readmore" href="#">Read more</a>
+            </div>
+            <div class="single_left_coloum floatleft mt-2"> <img src="/static/bg/art_3.jpg" alt="" width="290px" height="170px" />
+                <h5>Dim Lights Before Bedtime to Reduce Risk of Gestational Diabetes</h5>
+                <p>Pregnant women should dim the lights in their home and turn off or at least dim their screens (computer monitors and smartphones)
+                   a few hours before bedtime to reduce the risk of gestational diabetes ...</p>
+                <a class="readmore" href="#">Read more</a> 
+            </div>
+            </div>  
+            
+          </div>    
+        </div>
+    </div>
+    <!-- latest news ends -->
+
+    <!-- Right Column Part -->
+
+    <div class="right_coloum floatright">
+        <div class="single_right_coloum">
+          <h2 class="title">ARTICLES & REPORTS</h2>
+          <ul>
+            <li>
+              <div class="single_cat_right_content">
+                <h5>Shedding pounds may benefit your heart even if some weight is regained</h5>
+                <p>According to a review of research on behavioral weight loss programs. People who 
+                   lost weight through an intensive behavioral weight loss program had lower systolic
+                   blood pressure levels, total cholesterol-to-good cholesterol ratio and HbA1c levels
+                   (a diabetes marker), when compared to people who did not participate in a program
+                   or participated in a lower-intensity behavioral program.</p>
+                <p class="single_cat_right_content_meta"><a href="#"><span>read more</span></a> 13 hours ago</p>
+              </div>
+            </li>
+            <li>
+              <div class="single_cat_right_content">
+                <h5>Impact of 'hyper-palatable' foods across four diets</h5>
+                <p>Research found three meal characteristics consistently led to increased calorie intake 
+                   across four different dietary patterns: meal energy density (i.e., calories per gram of food),
+                   the amount of 'hyper-palatable' foods and how quickly the meals were eaten.</p>
+                <p class="single_cat_right_content_meta"><a href="#"><span>read more</span></a> 21 hours ago</p>
+              </div>
+            </li>
+            <li>
+                                 
+      </div>
+    </div>
+
+    <!-- Right Column Part Ends -->
+    <footer class="bg-dark text-center text-lg-start">
+  
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: white;">
+        © 2023 OnlineDiabetes.com. All rights reserved.
+      </div>
+    </footer>
+
+</body>
+</html>

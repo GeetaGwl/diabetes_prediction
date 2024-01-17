@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family:Arial; 
+    font-size:12px; 
+    line-height:13px
+}
+
+.content_area{
+    margin-top:25px;
+    display: flex;
+}
+.main_content{
+    width:970px;
+    margin-left: 10px;
+}
+.left_coloum{
+    width:970px;
+}
+.single_left_coloum_wrapper{
+    position:absolute; 
+    margin-left:-10px; 
+    margin-bottom:30px
+}
+.single_left_coloum_wrapper .title{
+    margin-left:10px
+}
+.title{
+    border-bottom:4px solid #595579;
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size:20px; 
+    word-spacing:2px;
+    }
+
+.more{
+    background:url("images/plus.png") no-repeat scroll 57px 9px #595579;
+     color:#FFF; 
+     display:block; 
+     font-size:10px; 
+     font-weight:bold; 
+     padding:4px 20px; 
+     position:absolute;
+     right:0;
+     text-transform:uppercase;
+     top:10px;
+     text-decoration: none;
+    }
+
+.single_left_coloum{
+    margin-left:10px; 
+    width:300px;
+}
+.readmore, .single_cat_right_content_meta span{
+    color:#595579;
+    font-size:10px;
+    text-transform:uppercase;
+    font-weight:bold; 
+    margin-right:20px;
+}
+
+.readmore:hover, .single_cat_right_content_meta span:hover{
+    color:#595579; 
+    text-decoration:underline
+}
+
+
+.alignleft{float:left; margin-left:0px}
+.aligncenter{display:block; margin:10px auto}
+.alignright{float:right; margin-left:10px}
+.floatleft{float:left}
+.floatright{float:right}
+
+
+/* Right column Part CSS */
+
+.right_coloum{width:370px;}
+.single_right_coloum{margin-bottom:20px}
+.single_right_coloum ul{margin:0; padding:0; list-style:none}
+.single_right_coloum ul li{border-bottom:1px dotted #ddd}
+.single_right_coloum ul li:last-child{border-bottom:none}
+.single_cat_right_content{padding-bottom:10px}
+.single_cat_right_content h3{margin-top:10px}
+
